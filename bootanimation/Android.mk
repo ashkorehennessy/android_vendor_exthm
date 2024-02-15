@@ -26,7 +26,6 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	@rm -rf $(dir $@)
 	@mkdir -p $(dir $@)
 	$(hide) tar xfp vendor/exthm/bootanimation/bootanimation.tar -C $(INTERMEDIATES)
-	$(hide) cp vendor/exthm/bootanimation/audio.wav $(INTERMEDIATES)/part0/audio.wav
 	$(hide) if [ $(TARGET_SCREEN_HEIGHT) -lt $(TARGET_SCREEN_WIDTH) ]; then \
 	    IMAGEWIDTH=$(TARGET_SCREEN_HEIGHT); \
 	else \
@@ -56,7 +55,6 @@ $(TARGET_GENERATED_BOOTANIMATION_DARK): $(SOONG_ZIP)
 	@rm -rf $(dir $@)
 	@mkdir -p $(dir $@)
 	$(hide) tar xfp vendor/exthm/bootanimation/bootanimation-dark.tar -C $(INTERMEDIATES_DARK)
-	$(hide) cp vendor/exthm/bootanimation/audio.wav $(INTERMEDIATES_DARK)/part0/audio.wav
 	$(hide) if [ $(TARGET_SCREEN_HEIGHT) -lt $(TARGET_SCREEN_WIDTH) ]; then \
 	    IMAGEWIDTH=$(TARGET_SCREEN_HEIGHT); \
 	else \
