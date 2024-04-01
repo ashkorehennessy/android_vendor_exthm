@@ -5,7 +5,6 @@ android_app_import{
     dex_preopt:{
         enabled: false,
     },
-    privileged: true,
     product_specific: true,
     overrides:["Browser2"],
 }
