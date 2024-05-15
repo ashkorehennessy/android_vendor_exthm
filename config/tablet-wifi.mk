@@ -6,3 +6,7 @@
 
 # Inherit common exTHmUI stuff
 $(call inherit-product, vendor/exthm/config/common.mk)
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Updater
