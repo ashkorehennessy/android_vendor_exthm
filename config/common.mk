@@ -27,6 +27,10 @@ $(call inherit-product-if-exists, vendor/gms/config.mk)
 PRODUCT_COPY_FILES += \
     vendor/exthm/config/permissions/privapp-permissions-exthm.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-exthm.xml
 
+# Copy init rc sctipts
+PRODUCT_COPY_FILES += \
+    vendor/exthm/prebuilt/etc/init/init.exthmui-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.exthmui-updater.rc
+
 # Required packages
 PRODUCT_PACKAGES += \
     Aperture \
