@@ -33,7 +33,6 @@ PRODUCT_COPY_FILES += \
 
 # Required packages
 PRODUCT_PACKAGES += \
-    Aperture \
     LatinIME \
     ThemePicker \
     ThemesStub \
@@ -41,6 +40,11 @@ PRODUCT_PACKAGES += \
     Glimpse \
     ParallelSpace \
     ViaBrowser
+
+ifneq ($(PRODUCT_NO_CAMERA),true)
+PRODUCT_PACKAGES += \
+    Aperture
+endif
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
