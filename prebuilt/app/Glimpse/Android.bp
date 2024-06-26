@@ -1,0 +1,50 @@
+//
+// SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app_import {
+    name:"Glimpse",
+    
+    apk:"Glimpse.apk",
+    
+    presigned: true,
+    
+    dex_preopt:{
+        enabled: false,
+    },
+
+    product_specific: true,
+
+    required: [
+        "GlimpseFrameworksBaseOverlay",
+        "initial-package-stopped-states-org.lineageos.glimpse",
+        "preinstalled-packages-org.lineageos.glimpse",
+    ],
+
+    overrides: [
+        "Gallery",
+        "Gallery3D",
+        "GalleryNew3D",
+    ],
+}
+
+prebuilt_etc {
+    name: "initial-package-stopped-states-org.lineageos.glimpse",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "initial-package-stopped-states-org.lineageos.glimpse.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "preinstalled-packages-org.lineageos.glimpse",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "preinstalled-packages-org.lineageos.glimpse.xml",
+    filename_from_src: true,
+}
